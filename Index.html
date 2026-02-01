@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blair Handyman Services | Cape Girardeau's Trusted Home Repair Expert</title>
+    <meta name="description" content="Professional handyman services in Cape Girardeau, MO. 10+ years construction experience. Quality repairs, installations, and home improvements.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --wood-dark: #2a3439;
+            --wood-mid: #3d4a52;
+            --sawdust: #f4f4f4;
+            --tool-orange: #d4621f;
+            --metal-blue: #4a6572;
+            --white: #ffffff;
+            --shadow: rgba(42, 52, 57, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--sawdust);
+            color: var(--wood-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--wood-mid) 0%, var(--wood-dark) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    rgba(255, 255, 255, 0.03) 4px
+                );
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            max-width: 100%;
+            width: min(600px, 90vw);
+            height: auto;
+            margin-bottom: 0.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+        
+        .tagline {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: var(--tool-orange);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+        
+        .hero-description {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: rgba(244, 237, 228, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--tool-orange);
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 98, 31, 0.3);
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            background: #e06f26;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 98, 31, 0.4);
+        }
+        
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .cta-button.secondary {
+            background: var(--metal-blue);
+            box-shadow: 0 10px 30px rgba(74, 101, 114, 0.3);
+        }
+        
+        .cta-button.secondary:hover {
+            background: #5a7d8c;
+            box-shadow: 0 15px 40px rgba(74, 101, 114, 0.4);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .google-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: var(--wood-dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .google-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(to bottom, #e8eef2 0%, #d4dde3 100%);
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--wood-dark);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+        
+        .services-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #2a7d9e;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out backwards;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2a7d9e, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-card:nth-child(1) { 
+            animation-delay: 0.1s; 
+        }
+        .service-card:nth-child(2) { 
+            animation-delay: 0.2s;
+        }
+        .service-card:nth-child(3) { 
+            animation-delay: 0.3s;
+        }
+        .service-card:nth-child(4) { 
+            animation-delay: 0.4s;
+        }
+        .service-card:nth-child(5) { 
+            animation-delay: 0.5s;
+        }
+        .service-card:nth-child(6) { 
+            animation-delay: 0.6s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-left-width: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f2f4 100%);
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+        
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--wood-dark);
+            margin: 0;
+        }
+        
+        .service-description {
+            color: var(--wood-mid);
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 1.5rem;
+            background: var(--metal-blue);
+            color: var(--white);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .credentials {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .credential {
+            text-align: center;
+        }
+        
+        .credential-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--tool-orange);
+            display: block;
+            font-family: 'Crimson Pro', serif;
+        }
+        
+        .credential-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 1.5rem;
+            background: var(--wood-dark);
+            color: var(--sawdust);
+            text-align: center;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            color: var(--sawdust);
+        }
+        
+        .contact-info {
+            margin: 2rem 0;
+        }
+        
+        .contact-item {
+            font-size: 1.3rem;
+            margin: 1.5rem 0;
+        }
+        
+        .phone-link {
+            color: var(--tool-orange);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.8rem;
+            display: inline-block;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .phone-link:hover {
+            color: #e06f26;
+            transform: scale(1.05);
+        }
+        
+        .service-area {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 2px solid var(--wood-mid);
+            font-size: 1.1rem;
+            color: rgba(244, 237, 228, 0.8);
+        }
+        
+        .fb-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #1877f2;
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 20px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+        
+        .fb-icon-hero {
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a0f0a;
+            color: rgba(244, 237, 228, 0.6);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+            }
+            
+            .services {
+                padding: 3rem 1rem;
+            }
+            
+            .about {
+                padding: 3rem 1rem;
+            }
+            
+            .contact {
+                padding: 3rem 1rem;
+            }
+            
+            .credentials {
+                gap: 2rem;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="BHS-logo01.PNG" alt="Blair Handyman Services - Cape Girardeau & Surrounding Areas" class="logo">
+            <p class="tagline">Craftsmanship You Can Trust</p>
+            <p class="hero-description">
+                From small repairs to complete installations, we bring over 10 years of construction expertise to every job in Cape Girardeau and surrounding areas.
+            </p>
+            <p style="color: var(--tool-orange); font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">(573) 979-6025</p>
+            <div class="cta-buttons">
+                <a href="tel:+15739796025" class="cta-button">☎ Call Now</a>
+                <a href="sms:+15739796025" class="cta-button secondary">💬 Text Us</a>
+            </div>
+            <a href="https://share.google/wsB6nOTnUN5M3K6qd" target="_blank" class="google-link">⭐ See Our Google Reviews</a>
+            <p style="margin-top: 1.5rem;">
+                <a href="https://www.facebook.com/blairhandyman" target="_blank" style="color: var(--tool-orange); text-decoration: none; font-size: 1.1rem; font-weight: 600;"><span class="fb-icon fb-icon-hero">f</span>Follow us on Facebook</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2 class="section-title">What We Do</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">Home Repairs</h3>
+                </div>
+                <p class="service-description">Drywall repair, door adjustments, cabinet fixes, and general maintenance to keep your home in top shape.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">🪛</div>
+                    <h3 class="service-title">Installations</h3>
+                </div>
+                <p class="service-description">Ceiling fans, light fixtures, shelving, curtain rods, and more—expertly installed and secured.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Interior Work</h3>
+                </div>
+                <p class="service-description">Painting, trim work, baseboard installation, and finishing touches that make your space shine.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">🚪</div>
+                    <h3 class="service-title">Carpentry</h3>
+                </div>
+                <p class="service-description">Custom built-ins, deck repairs, fence work, and wood projects crafted with precision.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Minor Electrical</h3>
+                </div>
+                <p class="service-description">Outlet and switch replacement, fixture installation, and troubleshooting electrical issues.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">🔨</div>
+                    <h3 class="service-title">And Much More</h3>
+                </div>
+                <p class="service-description">If it needs fixing, building, or installing, we can help. Call to discuss your project—no job too small!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-content">
+            <h2 class="section-title">Experience That Matters</h2>
+            <p class="about-text">
+                With over a decade in construction and home improvement, we understand that your home is your biggest investment. That's why we treat every project—whether it's a simple repair or a major installation—with the same attention to detail and commitment to quality.
+            </p>
+            <p class="about-text">
+                Based right here in Cape Girardeau, we're your neighbors. We take pride in our work, show up on time, and get the job done right the first time.
+            </p>
+            
+            <div class="credentials">
+                <div class="credential">
+                    <span class="credential-number">10+</span>
+                    <span class="credential-label">Years Experience</span>
+                </div>
+                <div class="credential">
+                    <span class="credential-number">100%</span>
+                    <span class="credential-label">Local & Trusted</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="contact-content">
+            <h2 class="contact-title">Ready to Get Started?</h2>
+            <div class="contact-info">
+                <p class="contact-item">Call or text for a free quote:</p>
+                <a href="tel:+15739796025" class="phone-link">(573) 979-6025</a>
+                <p class="contact-item">Email: <a href="mailto:blairhandymanservices@gmail.com" style="color: var(--tool-orange); text-decoration: none;">blairhandymanservices@gmail.com</a></p>
+                <p class="contact-item">
+                    <a href="https://www.facebook.com/blairhandyman" target="_blank" style="color: var(--tool-orange); text-decoration: none; font-weight: 600; transition: all 0.3s ease;"><span class="fb-icon">f</span>Follow us on Facebook</a>
+                </p>
+            </div>
+            
+            <div class="service-area">
+                <strong>Proudly Serving Cape Girardeau & Surrounding Areas</strong>
+                <p>Jackson • Scott City • Chaffee • Perryville</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Blair Handyman Services | Part of Blair Services LLC | Cape Girardeau, MO</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://share.google/wsB6nOTnUN5M3K6qd" target="_blank" style="color: var(--tool-orange); text-decoration: none; margin-right: 1rem;">Google Reviews</a>
+            <a href="https://www.facebook.com/blairhandyman" target="_blank" style="color: var(--tool-orange); text-decoration: none;">Facebook</a>
+        </p>
+    </footer>
+</body>
+</html>
